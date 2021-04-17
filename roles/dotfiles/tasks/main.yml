@@ -1,0 +1,10 @@
+- block:
+  - name: copy dotfiles
+    template:
+      src: ./{{ item.name }}
+      dest: ~/{{ item.name }}
+      force: yes
+    with_items: '{{ dot_files }}'
+
+  tags:
+    - dotfiles
